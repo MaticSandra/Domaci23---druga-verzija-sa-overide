@@ -11,22 +11,16 @@ public class LogOutTest extends BaseTest{
 
   @Test
   public void logoutButtonTest(){
+
       loginPage.login("standard_user", "secret_sauce");
       sidebarPage.menuClick();
       driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logout_sidebar_link")));
       sidebarPage.logoutClick();
-      String expectedResult = "https://www.saucedemo.com/";
-      String actualResult = driver.getCurrentUrl();
-
-      Assert.assertEquals(actualResult, expectedResult);
+      Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/");
 
       driver.get("https://www.saucedemo.com/inventory.html");
 
-      String expectedError = "Epic sadface: You can only access '/inventory.html' when you are logged in.";
-      String actualError = driver.findElement(By.xpath("//h3[@data-test='error']")).getText();
-      //*[@id="login_button_container"]/div/form/div[3]/h3/text()
-
-      Assert.assertEquals(actualError, expectedError);
+      Assert.assertEquals(sidebarPage.getErrorMessage().getText(), "Epic sadface: You can only access '/inventory.html' when you are logged in.");
 
   }
 

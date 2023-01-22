@@ -31,7 +31,7 @@ public class Login extends BasePage {
         loginButton.click();
     }
 
-//    public String getMessage() {
-//        return message.getText();
-//    }
+    public WebElement getMessage() {
+        return message;
+    }
 }

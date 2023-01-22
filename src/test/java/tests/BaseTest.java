@@ -33,9 +33,9 @@ public abstract class BaseTest {
     public void beforeMethod(){
         driver.get("https://www.saucedemo.com/");
     }
-//
-//    @AfterClass
-//    public void afterClass(){
-//        driver.quit();
-//    }
+
+    @AfterClass
+    public void afterClass(){
+        driver.quit();
+    }
 }

@@ -12,6 +12,13 @@ public class Sidebar extends BasePage{
     @FindBy(id = "logout_sidebar_link")
     private WebElement logOutButton;
 
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement errorMessage;
+
+    public WebElement getErrorMessage() {
+        return errorMessage;
+    }
+
     public Sidebar(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
