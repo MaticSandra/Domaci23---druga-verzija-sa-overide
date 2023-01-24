@@ -14,6 +14,7 @@ public class AddRemoveProductTest extends BaseTest {
         super.beforeClass();
         inventoryPage = new Inventory(driver, driverWait);
     }
+    
     @BeforeMethod
     public void beforeMethod(){
         super.beforeMethod();
