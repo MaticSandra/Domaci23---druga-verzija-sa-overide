@@ -10,11 +10,13 @@ public class AddRemoveProductTest extends BaseTest {
 
     Inventory inventoryPage;
 
-    public void beforeClass(){
+    @BeforeClass
+    @Override
+    public void beforeClass() { // ctrl+  O
         super.beforeClass();
         inventoryPage = new Inventory(driver, driverWait);
     }
-    
+
     @BeforeMethod
     public void beforeMethod(){
         super.beforeMethod();
