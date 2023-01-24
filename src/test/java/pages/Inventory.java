@@ -37,3 +37,5 @@ public class Inventory extends BasePage{
         remove.click();
     }
 }
+
+

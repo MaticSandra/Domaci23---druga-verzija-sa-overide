@@ -16,8 +16,6 @@ public abstract class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     protected Login loginPage;
-    protected Inventory inventoryPage;
-    protected Sidebar sidebarPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -25,8 +23,6 @@ public abstract class BaseTest {
         driver = new ChromeDriver();
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         loginPage = new Login(driver, driverWait);
-        sidebarPage = new Sidebar(driver, driverWait);
-        inventoryPage = new Inventory(driver, driverWait);
     }
 
     @BeforeMethod
