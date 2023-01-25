@@ -35,6 +35,7 @@ public class LogOutTest extends BaseTest {
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logout_sidebar_link")));
         sidebarPage.logoutClick();
 
+
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/");
 
         driver.navigate().refresh();
@@ -43,7 +44,7 @@ public class LogOutTest extends BaseTest {
 
         driver.get("https://www.saucedemo.com/inventory.html");
 
-        Assert.assertEquals(sidebarPage.getErrorMessage().getText(), "Epic sadface: You can only access '/inventory.html' when you are logged in.");
+        Assert.assertEquals(loginPage.getErrorMessage().getText(), "Epic sadface: You can only access '/inventory.html' when you are logged in.");
 
     }
 

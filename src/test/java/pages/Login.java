@@ -18,6 +18,12 @@ public class Login extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/div[3]")
     private WebElement message;
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement errorMessage;
+
+    public WebElement getErrorMessage() {
+        return errorMessage;
+    }
 
     public Login(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
